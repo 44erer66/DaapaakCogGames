@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAAPAAK Cognitive Games</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .user-info {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-info h3 {
+            color: #667eea;
+            font-size: 1.2em;
+        }
+
+        .user-info span {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        .description {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .game-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 30px 20px;
+            border-radius: 15px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .game-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .game-button:active {
+            transform: translateY(-2px);
+        }
+
+        .game-icon {
+            font-size: 2em;
+        }
+
+        .footer {
+            text-align: center;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .version {
+            color: #aaa;
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .container {
+                padding: 25px;
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="user-info">
+            <div>
+                <h3>👤 Welcome, User</h3>
+            </div>
+            <span>Session Active</span>
+        </div>
+
+        <div class="header">
+            <h1>DAAPAAK</h1>
+            <p class="tagline">Cognitive Games to Keep Your Brain Active</p>
+        </div>
+
+        <div class="description">
+            <p>
+                Welcome to DAAPAAK Cognitive Games! Choose from five engaging mini-games designed to exercise 
+                different cognitive skills including memory, attention, and processing speed. Your performance 
+                is automatically tracked to help monitor cognitive trends over time.
+            </p>
+        </div>
+
+        <div class="games-grid">
+            <button class="game-button" onclick="location.href='game1.html'">
+                <span class="game-icon">👓</span>
+                <span>Recall Trail</span>
+            </button>
+
+            <button class="game-button" onclick="location.href='game2.html'">
+                <span class="game-icon">🧩</span>
+                <span>Connect the Dots</span>
+            </button>
+
+            <button class="game-button" onclick="location.href='game3.html'">
+                <span class="game-icon">⚡</span>
+                <span>Reaction Time Test</span>
+            </button>
+
+            <button class="game-button" onclick="location.href='game4.html'">
+                <span class="game-icon">🧠</span>
+                <span>What is missing?</span>
+            </button>
+
+            <button class="game-button" onclick="location.href='game5.html'">
+                <span class="game-icon">🔢</span>
+                <span>Sudoku</span>
+            </button>
+        </div>
+
+        <div class="footer">
+            <p>
+                Developed by: Dantuluri, A. • Kang, P. • Kang, A. • Nguyen, K. • Rao, D. • Soman, A. • Tsai, A.
+            </p>
+            <p class="version">Version 0.1 - Initial Release</p>
+        </div>
+    </div>
+</body>
+</html>
