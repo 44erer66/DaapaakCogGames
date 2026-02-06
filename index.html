@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trail Making (Popup Recall)</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+<div class="app">
+    <header class="header">
+        <div>
+            <h1>Trail Making (Popup Recall)</h1>
+            <p class="subtitle">Memorize the order, then tap the circles in sequence.</p>
+        </div>
+
+        <div class="hud">
+            <div class="hud-item"><span class="label">Time</span><span id="time">0.0s</span></div>
+            <div class="hud-item"><span class="label">Errors</span><span id="errors">0</span></div>
+        </div>
+    </header>
+
+    <section class="controls">
+        <label>
+            Difficulty
+            <select id="difficulty">
+                <option value="3">Easy (3 number-letter pairs)</option>
+                <option value="5">Medium (5 pairs)</option>
+                <option value="8">Hard (8 pairs)</option>
+            </select>
+        </label>
+
+        <label>
+            Memorize Time (seconds)
+            <input id="memorizeSeconds" type="number" min="1" max="10" step="1" value="4" />
+        </label>
+
+        <button id="startBtn">Start</button>
+        <button id="resetBtn" class="secondary">Reset</button>
+    </section>
+
+    <main class="board-wrap">
+        <div class="board" id="board"></div>
+    </main>
+
+    <footer class="footer">
+        <div id="status" class="status">Choose settings, then press Start.</div>
+    </footer>
+</div>
+
+<!-- Sequence Modal -->
+<div id="sequenceModal" class="modal hidden">
+    <div class="modal-card">
+        <h2>Memorize the Order</h2>
+        <div id="sequenceText" class="sequence-text">—</div>
+
+        <div class="modal-row">
+            <span class="small">Starting in <span id="countdown">3</span>…</span>
+            <button id="startNowBtn" class="secondary">Start Now</button>
+        </div>
+    </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
