@@ -4,7 +4,7 @@ Cognitive games to keep your brain and mind active.
 
 ## Description
 
-A collection of seven cognitive mini-games for older adults. Each game targets different skills like memory, attention, and processing speed. It is designed to feel fun and easy. Automatically tracks performance to reveal cognitive trends over time. Provides clinicians with clear insights into patient cognition.
+A collection of five cognitive mini-games for older adults. Each game targets different skills like memory, attention, and processing speed. It is designed to feel fun and easy. Automatically tracks performance to reveal cognitive trends over time. Provides clinicians with clear insights into patient cognition.
 
 
 ## Getting Started
