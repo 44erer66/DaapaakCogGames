@@ -83,6 +83,11 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
 button.secondary {
   background: white;
   color: var(--ink);
