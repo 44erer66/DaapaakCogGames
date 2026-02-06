@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku - Cognitive Training</title>
+    <link rel="stylesheet" href="Sudoku.css">
+</head>
+<body>
+    <div class="app">
+        <div class="header">
+            <div>
+                <h1>Sudoku</h1>
+                <p class="subtitle">Fill the grid so each row, column, and 3x3 box contains 1-9.</p>
+            </div>
+            <div class="hud">
+                <div class="hud-item">
+                    <span class="label">Time</span>
+                    <span id="time-display">0.0s</span>
+                </div>
+                <div class="hud-item">
+                    <span class="label">Errors</span>
+                    <span id="error-count">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <label>
+                Difficulty
+                <select id="difficulty">
+                    <option value="easy">Easy (40 given numbers)</option>
+                    <option value="medium" selected>Medium (30 given numbers)</option>
+                    <option value="hard">Hard (25 given numbers)</option>
+                </select>
+            </label>
+            <button id="start-btn">Start</button>
+            <button class="secondary" id="pause-btn" disabled>Pause</button>
+            <button class="secondary" id="reset-btn">Reset</button>
+        </div>
+
+        <div class="board-wrap">
+            <div class="sudoku-grid" id="sudoku-grid"></div>
+            <div class="number-pad">
+                <button class="number-btn" data-num="1">1</button>
+                <button class="number-btn" data-num="2">2</button>
+                <button class="number-btn" data-num="3">3</button>
+                <button class="number-btn" data-num="4">4</button>
+                <button class="number-btn" data-num="5">5</button>
+                <button class="number-btn" data-num="6">6</button>
+                <button class="number-btn" data-num="7">7</button>
+                <button class="number-btn" data-num="8">8</button>
+                <button class="number-btn" data-num="9">9</button>
+                <button class="number-btn secondary" id="clear-btn">Clear</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal hidden" id="victory-modal">
+        <div class="modal-card">
+            <h2> Puzzle Solved!</h2>
+            <p>Congratulations! You've completed the Sudoku puzzle.</p>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-value" id="final-time">0:00</div>
+                    <div class="stat-label">Time Taken</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value" id="final-errors">0</div>
+                    <div class="stat-label">Errors Made</div>
+                </div>
+            </div>
+            <div class="modal-row">
+                <button class="secondary" onclick="closeModal()">Close</button>
+                <button onclick="startNewGame()">New Game</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="Sudoku.js"></script>
+</body>
+</html>
