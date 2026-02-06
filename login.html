@@ -140,6 +140,8 @@
         }
     </style>
 </head>
+
+  
 <body>
     <div class="container">
         <div class="header">
@@ -156,10 +158,10 @@
             <label for="password">Password</label>
             <input type="password" id="password" name="password" required>
         </div>
-        <button class="btn" onclick="location.href='homeuser.html'">Login</button>
+        <button class="btn" id="loginBtn">Login</button>
 
         <div class="toggle">
-            <p>Don't have an account? <a href="#" onclick="alert('so this is a tomorrow problem!')">Sign Up</a></p>
+            <p>Don't have an account? <a href="signup.html">Sign Up</a>
         </div>
 
         <div class="footer">
@@ -169,5 +171,36 @@
             <p class="version">Version 0.1 - Initial Release</p>
         </div>
     </div>
-</body>
+
+    <script type="module">
+        import { auth } from "./firebase.js";
+        import {
+          signInWithEmailAndPassword
+        } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+      
+        const loginBtn = document.getElementById("loginBtn");
+        const signupLink = document.getElementById("signupLink");
+      
+        loginBtn.addEventListener("click", async () => {
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+      
+          if (!email || !password) {
+            alert("Please enter email and password");
+            return;
+          }
+      
+          try {
+            await signInWithEmailAndPassword(auth, email, password);
+            window.location.href = "homeuser.html";
+          } catch (error) {
+            alert(error.message);
+          }
+        });
+      
+        signupLink.addEventListener("click", () => {
+          alert("Sign up page coming soon 🙂");
+        });
+      </script>
+    </body>
 </html>
