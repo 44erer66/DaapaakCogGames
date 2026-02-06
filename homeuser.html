@@ -45,6 +45,21 @@
             align-items: center;
         }
 
+        .logout-btn {
+            background: #9434c5;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: #7a2aa8;
+        }
+
         .user-info h3 {
             color: #667eea;
             font-size: 1.2em;
@@ -149,7 +164,10 @@
             <div>
                 <h3>👤 Welcome, User</h3>
             </div>
-            <span>Session Active</span>
+            <div>
+                <span>Session Active</span>
+                <button class="logout-btn" onclick="location.href='login.html'">Logout</button>
+            </div>
         </div>
 
         <div class="header">
