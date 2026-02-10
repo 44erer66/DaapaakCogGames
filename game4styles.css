@@ -1,0 +1,311 @@
+/* game4styles.css - What is Missing? */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+    min-height: 100vh;
+    padding: 20px;
+}
+
+
+
+.app {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+
+/* Header */
+
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+.header h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+
+.subtitle {
+    font-size: 0.95em;
+    opacity: 0.9;
+}
+
+
+.hud {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+.hud-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px 15px;
+    border-radius: 8px;
+    min-width: 80px;
+}
+
+
+
+.hud-item .label {
+    font-size: 0.8em;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+
+.hud-item span:last-child {
+
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+/* Controls */
+
+.controls {
+
+    padding: 25px 30px;
+    background: #f8f9fa;
+    border-bottom: 2px solid #e0e0e0;
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+
+}
+
+.controls label {
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: 500;
+    color: #333;
+
+}
+
+.controls select,
+.controls input {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.95em;
+    min-width: 150px;
+
+}
+
+.controls select:focus,
+.controls input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+button {
+
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+
+#startBtn {
+
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+
+}
+
+#startBtn:hover {
+
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+
+}
+
+.secondary {
+    background: #6c757d;
+    color: white;
+
+}
+
+.secondary:hover {
+    background: #5a6268;
+}
+
+.secondary:disabled {
+
+    background: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+
+}
+
+/* Game Area */
+
+.game-area {
+    padding: 30px;
+    min-height: 600px;
+}
+
+.phase-indicator {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #667eea;
+    min-height: 35px;
+
+
+}
+
+.scene-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: #e8f4f8;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 3px solid #ddd;
+
+}
+
+.scene-item {
+    position: absolute;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+
+}
+
+.scene-item:hover {
+
+    transform: scale(1.15);
+    z-index: 100;
+    filter: brightness(1.2) drop-shadow(0 0 8px rgba(0, 0, 0, 0.4));
+
+}
+
+.black-screen {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    z-index: 1000;
+
+}
+
+.feedback {
+
+
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    min-height: 40px;
+
+}
+
+.feedback.correct {
+    color: #48bb78;
+}
+
+.feedback.incorrect {
+    color: #e74c3c;
+}
+
+/* Footer */
+
+.footer {
+    padding: 20px 30px;
+    background: #f8f9fa;
+    border-top: 2px solid #e0e0e0;
+
+}
+
+.status {
+
+    text-align: center;
+    color: #666;
+    font-size: 1em;
+
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .header {
+
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+
+    .header h1 {
+
+        font-size: 1.6em;
+    }
+
+    .hud {
+        width: 100%;
+    }
+
+    .hud-item {
+        flex: 1;
+        min-width: 70px;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    
+    .controls label,
+    .controls select,
+    .controls input,
+    button {
+        width: 100%;
+    }
+
+    .scene-container {
+        height: 400px;
+    }
+}
